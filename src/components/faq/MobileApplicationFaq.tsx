@@ -1,6 +1,6 @@
 import faqShape from '../../../public/assets/img/home-10/faq/faq-shape-1.png';
 import Image from 'next/image';
-import React from 'react';
+
 
 const MobileApplicationFaq = () => {
     const faqItems = [

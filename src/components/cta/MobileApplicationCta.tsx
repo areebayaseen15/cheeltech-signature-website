@@ -3,7 +3,7 @@ import appStore from '../../../public/assets/img/home-10/cta/app-store.svg';
 import ctaPhn from '../../../public/assets/img/home-10/cta/cta-phn-1.png';
 import ctaPhn2 from '../../../public/assets/img/home-10/cta/cta-phn-2.png';
 import Image from 'next/image';
-import React from 'react';
+
 
 const MobileApplicationCta = () => {
     return (

@@ -1,4 +1,4 @@
-import HomeMain from "@/pages/homes/home/HomeMain";
+import MobileApplicationMain from "@/pages/homes/mobile-application/MobileApplicationMain";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,6 +7,6 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <HomeMain />
+    <MobileApplicationMain />
   );
 }

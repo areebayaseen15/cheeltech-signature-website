@@ -9,7 +9,6 @@ import SearchArea from '@/components/search-area/SearchArea';
 import RegisterForm from '@/components/forms/RegisterForm';
 import useScrollSmooth from '@/hooks/useScrollSmooth';
 import { useGSAP } from '@gsap/react';
-import React from 'react';
 
 const RegisterMain = () => {
     // Initialize custom cursor and background styles

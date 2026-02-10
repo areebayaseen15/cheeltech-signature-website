@@ -4,7 +4,7 @@ import { useParallax } from '@/components/shared/Parallax/useParallax';
 import { useCursorAndBackground } from '@/hooks/useCursorAndBackground';
 import useScrollSmooth from '@/hooks/useScrollSmooth';
 import { useGSAP } from '@gsap/react';
-import React from 'react';
+
 
 // Components
 import MobileApplicationTestimonial from '@/components/testimonial/MobileApplicationTestimonial';

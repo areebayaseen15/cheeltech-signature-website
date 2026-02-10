@@ -5,7 +5,7 @@ import appFeatures from '../../../public/assets/img/home-10/features/app-feature
 import FeatureBg from '../../../public/assets/img/home-10/features/app-features-bg.png';
 import { ArrowEight } from '@/svg/ArrowIcons';
 import Image from 'next/image';
-import React from 'react';
+
 
 const MobileApplicationFeatureTwo = () => {
     return (

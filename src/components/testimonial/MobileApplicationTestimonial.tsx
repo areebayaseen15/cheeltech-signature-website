@@ -4,7 +4,7 @@ import shape2 from '../../../public/assets/img/home-10/testimonial/testimonial-s
 import testimonialsData from '@/data/testimonialData';
 import { GoogleIcon, StarIcon } from '@/svg';
 import Image from 'next/image';
-import React from 'react';
+
 
 const MobileApplicationTestimonial = ({ className }: { className?: string }) => {
 
