@@ -43,21 +43,21 @@ const ITSolutionStep = () => {
     };
 
     return (
-        <div className="it-step-area it-step-bg paste-bg-2 p-relative pt-120 pb-140">
-            <div className="it-step-shape-1">
+        <div className="it-step-area it-step-bg paste-bg-2 bg-none p-relative pt-100 pb-100">
+            {/* <div className="it-step-shape-1">
                 <Image data-speed="1.1" src={aboutShape} alt="about-shape" />
-            </div>
-            <div className="it-step-shape-2 d-none d-xxl-block">
+            </div> */}
+            {/* <div className="it-step-shape-2 d-none d-xxl-block">
                 <Image data-speed="1.1" src={aboutShapeTwo} alt="about-shape" />
-            </div>
+            </div> */}
             <div className="container container-1230">
                 <div className="row justify-content-center">
                     <div className="col-xl-10">
                         <div className="it-step-title-box z-index-1 text-center mb-105">
-                            <span className="tp-section-subtitle-platform mb-20 tp-split-text tp-split-right">How we works</span>
-                            <h4 className="tp-section-title-platform mb-20 tp-split-text tp-split-right">Transforming IT, One Step at a Time</h4>
-                            <div className="tp_text_anim">
-                                <p>
+                            <span className="tp-section-subtitle-platform mb-20 tp-split-text tp-split-right text-black">How we works</span>
+                            <h4 className="tp-section-title-platform mb-20 tp-split-text tp-split-right text-black">Transforming IT, One Step at a Time</h4>
+                            <div className="tp_text_anim ">
+                                <p className='text-light'>
                                     Every business is unique, and so are our solutions. {`Here's`}
                                     how we tailor <br /> our expertise to your needs
                                 </p>
@@ -83,7 +83,7 @@ const ITSolutionStep = () => {
                                         className={`accordion-items ${activeAccordion === item.id ? 'faq-active' : ''}`}
                                         key={item.id}
                                     >
-                                        <h2 className="accordion-header">
+                                        <h2 className="accordion-header text-black">
                                             <button
                                                 className={`accordion-buttons ${activeAccordion === item.id ? '' : 'collapsed'}`}
                                                 type="button"
