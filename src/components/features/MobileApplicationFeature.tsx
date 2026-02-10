@@ -6,22 +6,22 @@ import React from 'react';
 const features = [
     {
         id: 1,
-        title: "Guaranteed safety",
-        description: "Powerful features to help you manage money smarter.",
+        title: "Verified HTML",
+        description: "Clean, spam-proof code that ensures your emails always land in the inbox.",
         icon: <GuaranteedSafetyIcon />,
         delay: ".3"
     },
     {
         id: 2,
-        title: "Fast performance",
-        description: "Powerful features to help you manage money smarter.",
+        title: "Zero Blur",
+        description: "CDN-hosted assets for signatures that load instantly and stay sharp on all screens",
         icon: <FastPerformanceIcon />,
         delay: ".5"
     },
     {
         id: 3,
-        title: "Awesome design",
-        description: "Powerful features to help you manage money smarter.",
+        title: "Responsive Layouts",
+        description: "Pixel-perfect templates that adapt seamlessly to mobile, desktop, and Dark Mode.",
         icon: <AwesomeDesignIcon />,
         delay: ".7"
     }
@@ -35,13 +35,13 @@ const MobileApplicationFeature = () => {
                     <div className="col-lg-12">
                         <div className="app-feature-heading text-center mb-55">
                             <span className="tp-section-subtitle border-bg bg-color tp_fade_anim" data-delay=".3">
-                                Easy to solution
+                              Smart Automation
                             </span>
                             <h3 className="tp-section-title-phudu fs-70 mb-20 tp_fade_anim" data-delay=".5">
-                                Unlock All <br /> Features in Our App
+                                Launch Your New  <br /> Brand in 60 Seconds
                             </h3>
                             <div className="tp_fade_anim" data-delay=".7">
-                                <p>Powerful features to help you manage money smarter.</p>
+                                <p> Generate, customize, and deploy interactive signatures instantly.</p>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@ const MobileApplicationFeature = () => {
                     <div className="col-lg-8">
                         <div className="app-feature-bottom text-center mt-20">
                             <p>
-                                <span>Hurray</span>Subscribe <Link href="#">Agntix application</Link> and get a special discount.
+                                <span>Launch</span> Browse our  <Link href="#">free templates</Link> and upgrade your signature today.
                             </p>
                         </div>
                     </div>

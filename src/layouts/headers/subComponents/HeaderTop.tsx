@@ -41,10 +41,10 @@ const HeaderTop = () => {
             <div className="tp-header-10-announcement-wrapper">
               <div className="tp-header-10-announcement-content d-flex align-items-center justify-content-center">
                 <p>
-                  <span>Free Update</span>Free support, Free updates, Free plugins.
+                  <span>2026 STANDARDS</span>Pro-Grade HTML Signatures. No Blurry Images. Free Template Library.
                 </p>
-                <Link className="d-none d-sm-block" href="/contact">
-                  Join Us{' '}
+                <Link className="d-none d-sm-block" href="#">
+                 Browse Templates{' '}
                   <span>
                     <ArrowSvg strokeWidth={2} />
                   </span>

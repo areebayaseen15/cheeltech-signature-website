@@ -1,6 +1,7 @@
 import heroBottomBg from '../../../public/assets/img/home-10/hero/app-hero-bottom-bg.png';
 import heroBottomBgTwo from '../../../public/assets/img/home-10/hero/app-hero-bg.png';
-import heroHandShape from '../../../public/assets/img/home-10/hero/hero-hand-shape.png';
+// import heroHandShape from '../../../public/assets/img/home-10/hero/hero-hand-shape.png';
+import heroHandShape from '../../../public/assets/img/home-10/hero-hand-shape.webp';
 import heroSecureImg from '../../../public/assets/img/home-10/hero/hero-secure.png';
 import heroToolsImg from '../../../public/assets/img/home-10/hero/hero-tools.png';
 import shape from '../../../public/assets/img/home-10/hero/hero-round-shape.png';
@@ -22,27 +23,29 @@ const MobileApplicationHero = () => {
                     <div className="col-lg-6">
                         <div className="app-hero-wrap z-index-2 pb-65 pl-55">
                             <div className="app-hero-heading mb-40">
-                                <span className="tp-section-subtitle border-bg tp_fade_anim" data-delay=".3">Heyo !
-                                    We launched our Alpha!</span>
-                                <h4 className="tp-section-title-phudu tp_fade_anim" data-delay=".5">One global
-                                    <br />plan. No hassle.
+                                <span className="tp-section-subtitle border-bg tp_fade_anim" data-delay=".3">Expert-Crafted HTML Templates</span>
+                                <h4 className="tp-section-title-phudu tp_fade_anim" data-delay=".5">Professional Branding.
+
+                                    <br /> Zero Effort.
                                 </h4>
                             </div>
                             <div className="app-hero-btn-box d-flex align-item-center">
-                                <div className="app-hero-btn mr-35 tp_fade_anim" data-delay=".7" data-fade-from="top" data-ease="bounce">
+                                <div className="app-hero-btn mr-35 width-full tp_fade_anim" data-delay=".7" data-fade-from="top" data-ease="bounce">
                                     <div className="animated-border-box border-icon">
                                         <Link className="tp-btn-gradient p-relative" href="/contact">
                                             <span>
                                                 <DownloadAppIcon />
-                                            </span>{" "}Download App
+                                            </span>
+                                            View 2026 Templates
                                         </Link>
                                     </div>
                                 </div>
                                 <div className="app-hero-btn-text tp_text_anim">
                                     <p>
-                                        Your ultimate travel partner. <br />
-                                        Carries the information you need <br />
-                                        while travelling.
+                                     
+                                        Ditch blurry images for interactive
+                                      HTML signatures. Perfect on every 
+                                     device. Start for free today.
                                     </p>
                                 </div>
                             </div>
