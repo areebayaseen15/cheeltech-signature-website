@@ -19,7 +19,7 @@ import MobileApplicationFaq from '@/components/faq/MobileApplicationFaq';
 import BackToTop from '@/components/shared/BackToTop/BackToTop';
 import PortfolioSlider from '@/components/portfolio/PortfolioSlider';
 import DesignStudioAbout from '@/components/about/DesignStudioAbout';
-import ITSolutionStep from '@/components/step/ITSolutionStep';
+import ITSolutionStep from '@/components/step/ITSolutio0nStep2';
 
 const MobileApplicationMain = () => {
     // Initialize custom cursor and background styles

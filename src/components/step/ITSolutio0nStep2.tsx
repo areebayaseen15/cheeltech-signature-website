@@ -1,12 +1,11 @@
-import aboutShape from '../../../public/assets/img/images/shap-removebg-preview.png';
-import aboutShapeTwo from '../../../public/assets/img/images/step-shape-2.png';
-import aboutShapeThree from '../../../public/assets/img/images/about-shape-1.webp';
-import aboutShapeFour from '../../../public/assets/img/images/about-shape-2.webp';
-import about1 from '../../../public/assets/img/images/about-1.webp';
+import aboutShape from '../../../public/assets/img/home-11/step/about-shape-3.png';
+import aboutShapeTwo from '../../../public/assets/img/home-11/step/about-shape-4.png';
+import aboutShapeThree from '../../../public/assets/img/home-11/step/about-shape-1.jpg';
+import aboutShapeFour from '../../../public/assets/img/home-11/step/about-shape-2.png';
+import about1 from '../../../public/assets/img/home-11/step/about-1.jpg';
 import { AccordionId, AccordionItemDT } from '@/types/custom-d-t';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { HeroShape } from '@/svg';
 
 
 const ITSolutionStep = () => {
@@ -16,26 +15,26 @@ const ITSolutionStep = () => {
         {
             id: 'collapseOne',
             step: 'Step 1',
-            title: 'Deep Dive & Strategy',
-            content: 'We begin by listening to your needs, defining project scope, user requirements, and technical strategy to ensure alignment with your business objectives.'
+            title: 'Discovery',
+            content: 'Leveraging our findings, we craft a comprehensive IT plan. This involves designing systems, networks, and software that align with your business goals.'
         },
         {
             id: 'collapseTwo',
             step: 'Step 2',
-            title: 'Architecture & UX/UI',
-            content: 'Based on the strategy, we craft the site architecture, wireframes, and user interface (UI/UX) design for approval, creating a clear technical blueprint.'
+            title: 'Planning & Design',
+            content: 'Leveraging our findings, we craft a comprehensive IT plan. This involves designing systems, networks, and software that align with your business goals.'
         },
         {
             id: 'collapseThree',
             step: 'Step 3',
-            title: 'Development & Integration',
-            content: 'Our developers build the solution—writing clean, optimized code, integrating databases, and deploying content onto secure server environments.'
+            title: 'Implementation',
+            content: 'Leveraging our findings, we craft a comprehensive IT plan. This involves designing systems, networks, and software that align with your business goals.'
         },
         {
             id: 'collapseFour',
             step: 'Step 4',
-            title: 'Testing & Launch',
-            content: 'We perform rigorous testing (QA) across all devices and browsers, followed by a final client review before the secure, high-performance launch.'
+            title: 'Quality Assurance',
+            content: 'Leveraging our findings, we craft a comprehensive IT plan. This involves designing systems, networks, and software that align with your business goals.'
         }
     ];
 
@@ -45,7 +44,6 @@ const ITSolutionStep = () => {
 
     return (
         <div className="it-step-area it-step-bg paste-bg-2 p-relative pt-120 pb-140">
-            
             <div className="it-step-shape-1">
                 <Image data-speed="1.1" src={aboutShape} alt="about-shape" />
             </div>
@@ -56,11 +54,12 @@ const ITSolutionStep = () => {
                 <div className="row justify-content-center">
                     <div className="col-xl-10">
                         <div className="it-step-title-box z-index-1 text-center mb-105">
-                            <span className="tp-section-subtitle-platform mb-20 tp-split-text tp-split-right">Our Process</span>
-                            <h4 className="tp-section-title-platform mb-20 tp-split-text tp-split-right">Transforming Your Digital Vision, Step by Step.</h4>
+                            <span className="tp-section-subtitle-platform mb-20 tp-split-text tp-split-right">How we works</span>
+                            <h4 className="tp-section-title-platform mb-20 tp-split-text tp-split-right">Transforming IT, One Step at a Time</h4>
                             <div className="tp_text_anim">
                                 <p>
-                                    Every business needs a unique digital strategy. We work together to align <br/>our expertise with your specific goals
+                                    Every business is unique, and so are our solutions. {`Here's`}
+                                    how we tailor <br /> our expertise to your needs
                                 </p>
                             </div>
                         </div>
@@ -85,14 +84,16 @@ const ITSolutionStep = () => {
                                         key={item.id}
                                     >
                                         <h2 className="accordion-header">
-                                          <button
-  type="button"
-  className="accordion-buttons"
-  onClick={() => handleAccordionClick(item.id)}
->
-  <i>{item.step}</i>
-  <span>{item.title}</span>
-</button>
+                                            <button
+                                                className={`accordion-buttons ${activeAccordion === item.id ? '' : 'collapsed'}`}
+                                                type="button"
+                                                onClick={() => handleAccordionClick(item.id)}
+                                                aria-expanded={activeAccordion === item.id ? "true" : "false"}
+                                                aria-controls={item.id}
+                                            >
+                                                <i>{item.step}</i>
+                                                <span>{item.title}</span>
+                                            </button>
                                         </h2>
                                         <div
                                             id={item.id}
