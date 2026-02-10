@@ -33,9 +33,9 @@ const MobileApplicationHero = () => {
                                 <div className="app-hero-btn mr-35 width-full tp_fade_anim" data-delay=".7" data-fade-from="top" data-ease="bounce">
                                     <div className="animated-border-box border-icon">
                                         <Link className="tp-btn-gradient p-relative" href="/contact">
-                                            <span>
+                                            {/* <span>
                                                 <DownloadAppIcon />
-                                            </span>
+                                            </span> */}
                                             View 2026 Templates
                                         </Link>
                                     </div>

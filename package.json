@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-   "dev": "next dev --webpack",
-  "build": "next build --webpack",
-  "start": "next start --webpack",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start --webpack",
     "clean": "rm -rf node_modules package-lock.json yarn.lock",
     "lint": "next lint"
   },
@@ -19,6 +19,7 @@
     "imagesloaded": "^5.0.0",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.7.1",
+    "lucide-react": "^0.563.0",
     "next": "^16.1.6",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",

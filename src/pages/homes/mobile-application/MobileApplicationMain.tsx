@@ -58,14 +58,14 @@ const MobileApplicationMain = () => {
                         <MobileApplicationHero />
                         <MobileApplicationBrand />
                         <MobileApplicationFeature />
-                        <MobileApplicationFeatureTwo />
-                        <MobileApplicationReview />
-                        <MobileApplicationStack />
+                        {/* <MobileApplicationFeatureTwo /> */}
+                        {/* <MobileApplicationReview /> */}
+                        {/* <MobileApplicationStack /> */}
                         <MobileApplicationBenefit />
                         <MobileApplicationPrice />
                         <MobileApplicationTestimonial />
                         <MobileApplicationFaq />
-                        <MobileApplicationCta />
+                        {/* <MobileApplicationCta /> */}
                     </main>
                     <MobileApplicationFooter />
                 </div>
