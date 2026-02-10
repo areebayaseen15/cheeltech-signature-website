@@ -21,7 +21,7 @@ const MobileApplicationBrand = () => {
     ];
 
     return (
-        <div className="app-brand-area pt-120 pb-130">
+        <div className="app-brand-area pt-100 pb-40">
             <div className="container container-1230">
                 <div className="row justify-content-center">
                     <div className="col-lg-12">

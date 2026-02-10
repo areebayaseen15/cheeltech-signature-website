@@ -29,7 +29,7 @@ const features = [
 
 const MobileApplicationFeature = () => {
     return (
-        <div className="app-feature-area app-feature-border-style">
+        <div className="app-feature-area app-feature-border-style  pb-100">
             <div className="container container-1230">
                 <div className="row">
                     <div className="col-lg-12">

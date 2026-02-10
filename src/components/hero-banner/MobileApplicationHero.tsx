@@ -57,7 +57,7 @@ const MobileApplicationHero = () => {
                         </div>
                     </div>
                 </div>
-                <div className="app-hero-bottom-thumb-main z-index-1 tp_fade_anim" data-delay=".5">
+                {/* <div className="app-hero-bottom-thumb-main z-index-1 tp_fade_anim" data-delay=".5">
                     <Image style={{ width: "100%", height: "auto" }} src={heroHandShape} alt="shape" />
                     <Image className="shape-1" src={shape1} alt="shape-1" />
                     <Image className="shape-2" data-speed="1.1" src={heroUser} alt="hero-user" />
@@ -95,7 +95,7 @@ const MobileApplicationHero = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );

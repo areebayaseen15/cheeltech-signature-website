@@ -8,19 +8,18 @@ import { useGSAP } from '@gsap/react';
 
 // Components
 import MobileApplicationTestimonial from '@/components/testimonial/MobileApplicationTestimonial';
-import MobileApplicationFeatureTwo from '@/components/features/MobileApplicationFeatureTwo';
-import MobileApplicationReview from '@/components/review-area/MobileApplicationReview';
 import MobileApplicationBenefit from '@/components/benefits/MobileApplicationBenefit';
 import MobileApplicationFeature from '@/components/features/MobileApplicationFeature';
 import MobileApplicationPrice from '@/components/price-area/MobileApplicationPrice';
 import MobileApplicationHero from '@/components/hero-banner/MobileApplicationHero';
-import MobileApplicationStack from '@/components/stack-area/MobileApplicationStack';
 import MobileApplicationFooter from '@/layouts/footers/MobileApplicationFooter';
 import MobileApplicationHeader from '@/layouts/headers/MobileApplicationHeader';
 import MobileApplicationBrand from '@/components/brand/MobileApplicationBrand';
-import MobileApplicationCta from '@/components/cta/MobileApplicationCta';
 import MobileApplicationFaq from '@/components/faq/MobileApplicationFaq';
 import BackToTop from '@/components/shared/BackToTop/BackToTop';
+import PortfolioSlider from '@/components/portfolio/PortfolioSlider';
+import DesignStudioAbout from '@/components/about/DesignStudioAbout';
+import ITSolutionStep from '@/components/step/ITSolutionStep';
 
 const MobileApplicationMain = () => {
     // Initialize custom cursor and background styles
@@ -57,15 +56,14 @@ const MobileApplicationMain = () => {
                     <main>
                         <MobileApplicationHero />
                         <MobileApplicationBrand />
+                        <DesignStudioAbout/>
                         <MobileApplicationFeature />
-                        {/* <MobileApplicationFeatureTwo /> */}
-                        {/* <MobileApplicationReview /> */}
-                        {/* <MobileApplicationStack /> */}
+                        <ITSolutionStep/>
+                        <PortfolioSlider/>
                         <MobileApplicationBenefit />
                         <MobileApplicationPrice />
                         <MobileApplicationTestimonial />
                         <MobileApplicationFaq />
-                        {/* <MobileApplicationCta /> */}
                     </main>
                     <MobileApplicationFooter />
                 </div>
