@@ -40,10 +40,10 @@ const MobileApplicationFooter = () => {
                         <div className="col-xl-2 col-lg-2 col-md-3 mb-40">
                             <div className="dgm-footer-widget app-footer-widget app-footer-col-3">
                                 <h4 className="dgm-footer-widget-title">Need help?</h4>
-                                <div className="app-footer-widget-info mb-20">
+                                {/* <div className="app-footer-widget-info mb-20">
                                     <div className="app-footer-widget-info-title">Call us directly?</div>
                                     <Link className="tp-line-black" href="tel:+923422766346">(+92)3422766346</Link>
-                                </div>
+                                </div> */}
 
                                 <div className="app-footer-widget-info">
                                     <div className="app-footer-widget-info-title">Need live support?</div>

@@ -31,10 +31,10 @@ const MobileApplicationHeader = () => {
                                             </Link>
                                         </div>
                                     </div>
-                                    <div className="col-xl-10 col-lg-8 col-md-6 col-7 pl-120">
+                                    <div className="col-xl-10 col-lg-8 col-md-6 col-7 pl-50">
                                         <div className="tp-header-10-box d-flex align-items-center justify-content-end justify-content-xl-between">
                                             <div className="tp-header-menu tp-header-10-menu tp-header-dropdown dropdown-white-bg d-none d-xl-block ">
-                                                <nav className="tp-mobile-menu-active ml-5">
+                                                <nav className="tp-mobile-menu-active ">
                                                     <NavMenus />
                                                 </nav>
                                             </div>
@@ -46,7 +46,7 @@ const MobileApplicationHeader = () => {
                                                         </Link>
                                                     </div>
                                                 </div>
-                                                <div className="tp-header-10-offcanvas ml-20">
+                                                {/* <div className="tp-header-10-offcanvas ml-20">
                                                     <div className="tp-header-bar">
                                                         <button onClick={() => setOpenOffCanvas(true)} className="tp-offcanvas-open-btn">
                                                             <i></i>
@@ -54,7 +54,7 @@ const MobileApplicationHeader = () => {
                                                             <i></i>
                                                         </button>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>

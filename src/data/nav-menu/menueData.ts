@@ -41,13 +41,24 @@ const headerMenuData:MenuItem[] = [
     active: true,
     megaMenu: false,
     children: true,
+    title: "Signature templates",
+    pluseIncon: true,
+    link: "#template",
+   
+  },
+  {
+    id: 5,
+    hasDropdown: false,
+    active: true,
+    megaMenu: false,
+    children: true,
     title: "FAQ",
     pluseIncon: true,
     link: "#faq",
     
   },
   {
-    id: 5,
+    id: 6,
     hasDropdown: true,
     active: true,
     megaMenu: false,

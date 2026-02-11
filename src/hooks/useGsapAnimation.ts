@@ -207,7 +207,15 @@ export const panelAnimation = (): void => {
 
 // Scroll-triggered background animation for text lines
 export const textInvertAnim = (className: string) => {
-  const split = new SplitText(`.${className}`, { type: "lines" });
+
+  // ✅ SSR safety
+  if (typeof window === "undefined") return;
+
+  const elements = document.querySelectorAll(`.${className}`);
+  if (!elements.length) return;
+
+  const split = new SplitText(elements, { type: "lines" });
+
   split.lines.forEach((target) => {
     gsap.to(target, {
       backgroundPositionX: 0,
@@ -215,16 +223,23 @@ export const textInvertAnim = (className: string) => {
       scrollTrigger: {
         trigger: target,
         scrub: 1,
-        start: 'top 85%',
-        end: "bottom center"
-      }
+        start: "top 85%",
+        end: "bottom center",
+      },
     });
   });
+
+  // ✅ MOST IMPORTANT — ID jump fix
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 500);
 };
+
 // Convenience hooks for each variant
 export const textInvertAnim1 = () => textInvertAnim('tp_text_invert');
 export const textInvertAnim2 = () => textInvertAnim('tp_text_invert_2');
-export const textInvertAnim3 = (aboutRef: unknown) => textInvertAnim('tp_text_invert_3');
+export const textInvertAnim3 = () => textInvertAnim('tp_text_invert_3');
+
 
 //Home Main Setup GSAP video animation
 export const videoAnimation = () => {
