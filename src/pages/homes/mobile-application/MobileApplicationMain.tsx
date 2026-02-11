@@ -1,9 +1,9 @@
 'use client';
+import { useRef, useEffect } from 'react';
 import { fadeAnimation, scrollMovingText, gsapBackgroundAnim, panelPinAnimation, textInvertAnim3 } from '@/hooks/useGsapAnimation';
 import { useParallax } from '@/components/shared/Parallax/useParallax';
 import { useCursorAndBackground } from '@/hooks/useCursorAndBackground';
 import useScrollSmooth from '@/hooks/useScrollSmooth';
-import { useGSAP } from '@gsap/react';
 
 // Components
 import MobileApplicationTestimonial from '@/components/testimonial/MobileApplicationTestimonial';
@@ -20,20 +20,25 @@ import DesignStudioAbout from '@/components/about/DesignStudioAbout';
 import ITSolutionStep from '@/components/step/ITSolutio0nStep2';
 
 const MobileApplicationMain = () => {
+    const aboutRef = useRef<HTMLDivElement>(null);
+
+    // Cursor, Scroll, Parallax
     useCursorAndBackground({ bgColor: "#08041D" });
     useScrollSmooth();
     useParallax();
 
-    useGSAP(() => {
-        const timer = setTimeout(() => {
-            fadeAnimation();
-            panelPinAnimation();
-            scrollMovingText();
-            gsapBackgroundAnim();
-            textInvertAnim3();
-        }, 100);
-        return () => clearTimeout(timer);
-    });
+    // GSAP Animations - client-side only
+    useEffect(() => {
+        fadeAnimation();
+        panelPinAnimation();
+        scrollMovingText();
+        gsapBackgroundAnim();
+
+        // textInvertAnim3 using ref
+        if (aboutRef.current) {
+            textInvertAnim3(aboutRef.current);
+        }
+    }, []);
 
     return (
         <>
@@ -47,27 +52,27 @@ const MobileApplicationMain = () => {
             <div id="smooth-wrapper" style={{ backgroundColor: "#F7F7FD" }}>
                 <div id="smooth-content">
                     <main>
-                        <section id="hero">
+                        <section id="hero" >
                             <MobileApplicationHero />
                         </section>
 
-                        <section id="brand">
+                        <section id="brand" className='pt-50'>
                             <MobileApplicationBrand />
                         </section>
 
-                        <section id="about">
+                        <section id="about" ref={aboutRef} className='pt-0'>
                             <DesignStudioAbout />
                         </section>
 
-                        <section id="features">
+                        <section id="features" className='pt-80'>
                             <MobileApplicationFeature />
                         </section>
 
-                        <section id="steps">
+                        <section id="steps" className='pt-160'>
                             <ITSolutionStep />
                         </section>
 
-                        <section id="template">
+                        <section id="template" className='pt-100'>
                             <PortfolioSlider />
                         </section>
 
@@ -79,7 +84,7 @@ const MobileApplicationMain = () => {
                             <MobileApplicationTestimonial />
                         </section> */}
 
-                        <section id="faq">
+                        <section id="faq" className='pt-140'>
                             <MobileApplicationFaq />
                         </section>
                     </main>

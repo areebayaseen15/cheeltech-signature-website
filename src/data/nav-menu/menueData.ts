@@ -30,9 +30,9 @@ const headerMenuData:MenuItem[] = [
     active: true,
     megaMenu: false,
     children: true,
-    title: "Services",
+    title: "How it works",
     pluseIncon: true,
-    link: "#",
+    link: "#steps",
    
   },
   {
@@ -41,31 +41,20 @@ const headerMenuData:MenuItem[] = [
     active: true,
     megaMenu: false,
     children: true,
-    title: "Projects",
+    title: "FAQ",
     pluseIncon: true,
-    link: "#",
-   
-  },
-  {
-    id: 5,
-    hasDropdown: false,
-    active: true,
-    megaMenu: false,
-    children: true,
-    title: "Blog",
-    pluseIncon: true,
-    link: "#",
+    link: "#faq",
     
   },
   {
-    id: 6,
+    id: 5,
     hasDropdown: true,
     active: true,
     megaMenu: false,
     children: true,
     title: "Contact",
     pluseIncon: true,
-    link: "#",
+    link: "#contact",
     
   }
 ];

@@ -1,9 +1,9 @@
-"use client"
+'use client';
 
 import { RefObject, useEffect } from 'react';
 import { gsap } from 'gsap';
 
-export const useTextAnimation =  <T extends HTMLElement>(ref: RefObject<T | null>) => {
+export const useTextAnimation = <T extends HTMLElement>(ref: RefObject<T | null>) => {
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
@@ -23,9 +23,7 @@ export const useTextAnimation =  <T extends HTMLElement>(ref: RefObject<T | null
               wordSpan.appendChild(letterSpan);
             });
             textNodes.push(wordSpan);
-            if (index < array.length - 1) {
-              textNodes.push(document.createTextNode(' '));
-            }
+            if (index < array.length - 1) textNodes.push(document.createTextNode(' '));
           });
         } else if (node.nodeType === Node.ELEMENT_NODE) {
           textNodes.push(node.cloneNode(true));
@@ -36,47 +34,59 @@ export const useTextAnimation =  <T extends HTMLElement>(ref: RefObject<T | null
       return el;
     };
 
-    // Add hover effects to letters
     const addHoverEffects = (el: HTMLElement) => {
       const letters = el.querySelectorAll('.tp-letter-span');
       const cleanupFns: (() => void)[] = [];
-      
+
       letters.forEach(letter => {
         const onEnter = () => {
-          gsap.to(letter, {
-            scaleY: 1.3,
-            y: '10%',
-            duration: 0.2,
-            ease: 'sine'
-          });
+          gsap.to(letter, { scaleY: 1.3, y: '10%', duration: 0.2, ease: 'sine' });
         };
-
         const onLeave = () => {
-          gsap.to(letter, {
-            scaleY: 1,
-            y: '0%',
-            duration: 0.2,
-            ease: 'sine'
-          });
+          gsap.to(letter, { scaleY: 1, y: '0%', duration: 0.2, ease: 'sine' });
         };
-
         letter.addEventListener('mouseenter', onEnter);
         letter.addEventListener('mouseleave', onLeave);
-
         cleanupFns.push(() => {
           letter.removeEventListener('mouseenter', onEnter);
           letter.removeEventListener('mouseleave', onLeave);
         });
       });
-
       return cleanupFns;
     };
 
-    const animatedElement = splitText(element);
-    const cleanupFns = addHoverEffects(animatedElement);
+    const animate = () => {
+      const animatedEl = splitText(element);
+      addHoverEffects(animatedEl);
+    };
+
+    // Initial mount animation
+    animate();
+
+    // Animation on scroll when section enters viewport
+    const handleScroll = () => {
+      if (!element) return;
+      const rect = element.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        animate();
+      }
+    };
+
+    // Animation on navbar hash change (#about)
+    const handleHash = () => {
+      const hash = window.location.hash;
+      if (hash === `#${element.id}`) {
+        animate();
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('hashchange', handleHash);
 
     return () => {
-      cleanupFns.forEach(cleanup => cleanup());
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('hashchange', handleHash);
     };
   }, [ref]);
 };

@@ -10,7 +10,7 @@ import React from 'react';
 
 const MobileApplicationBenefit = () => {
     return (
-        <div className="app-benefits-area p-relative mt-20">
+        <div className="app-benefits-area p-relative">
             <div className="tp-gsap-bg" style={{ backgroundColor: "#101016" }}></div>
             <div className="container container-1630">
                 <div className="app-benefits-wrapper">

@@ -8,7 +8,7 @@ const PortfolioSlider = () => {
     const displayPortfolioItems = portfolioData.slice(47, 54);
     return (
       
-        <div className="app-feature-area app-feature-border-style  pb-100">
+        <div className="app-feature-area app-feature-border-style ">
             <div className="container container-1230">
                      <div className="row">
                     <div className="col-lg-12">

@@ -39,7 +39,7 @@ const ITSolutionStep = () => {
     };
 
     return (
-        <div className="it-step-area it-step-bg paste-bg-2 bg-none p-relative pt-100 pb-100">
+        <div className="it-step-area it-step-bg paste-bg-2 bg-none p-relative ">
             <div className="container container-1230">
                 <div className="row justify-content-center">
                     <div className="col-xl-10">

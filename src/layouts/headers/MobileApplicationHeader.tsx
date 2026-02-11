@@ -25,16 +25,16 @@ const MobileApplicationHeader = () => {
                             <div className="tp-header-10-wrapper mt-30">
                                 <div className="row align-items-center">
                                     <div className="col-xl-2 col-lg-4 col-md-6 col-5">
-                                        <div className="tp-header-10-logo">
+                                        <div className="tp-header-10-logo ">
                                             <Link href="/">
-                                                <Image width={120} src={logoBlack} alt="logo-light" />
+                                                <Image width={150} src={logoBlack} alt="logo-light" />
                                             </Link>
                                         </div>
                                     </div>
-                                    <div className="col-xl-10 col-lg-8 col-md-6 col-7">
+                                    <div className="col-xl-10 col-lg-8 col-md-6 col-7 pl-120">
                                         <div className="tp-header-10-box d-flex align-items-center justify-content-end justify-content-xl-between">
-                                            <div className="tp-header-menu tp-header-10-menu tp-header-dropdown dropdown-white-bg d-none d-xl-block">
-                                                <nav className="tp-mobile-menu-active">
+                                            <div className="tp-header-menu tp-header-10-menu tp-header-dropdown dropdown-white-bg d-none d-xl-block ">
+                                                <nav className="tp-mobile-menu-active ml-5">
                                                     <NavMenus />
                                                 </nav>
                                             </div>

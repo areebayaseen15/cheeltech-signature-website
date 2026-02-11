@@ -224,7 +224,7 @@ export const textInvertAnim = (className: string) => {
 // Convenience hooks for each variant
 export const textInvertAnim1 = () => textInvertAnim('tp_text_invert');
 export const textInvertAnim2 = () => textInvertAnim('tp_text_invert_2');
-export const textInvertAnim3 = () => textInvertAnim('tp_text_invert_3');
+export const textInvertAnim3 = (aboutRef: unknown) => textInvertAnim('tp_text_invert_3');
 
 //Home Main Setup GSAP video animation
 export const videoAnimation = () => {
