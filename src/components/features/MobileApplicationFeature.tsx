@@ -76,7 +76,7 @@ const MobileApplicationFeature = () => {
                     <div className="col-lg-8">
                         <div className="app-feature-bottom text-center mt-20">
                             <p>
-                                <span>Launch</span> Browse our  <Link href="#">free templates</Link> and upgrade your signature today.
+                                <span>Launch</span> Browse our  <Link href="#template">free templates</Link> and upgrade your signature today.
                             </p>
                         </div>
                     </div>

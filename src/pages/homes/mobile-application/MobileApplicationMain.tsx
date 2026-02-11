@@ -1,14 +1,12 @@
-"use client"
-import { fadeAnimation,scrollMovingText, gsapBackgroundAnim, panelPinAnimation,textInvertAnim3 } from '@/hooks/useGsapAnimation';
+'use client';
+import { fadeAnimation, scrollMovingText, gsapBackgroundAnim, panelPinAnimation, textInvertAnim3 } from '@/hooks/useGsapAnimation';
 import { useParallax } from '@/components/shared/Parallax/useParallax';
 import { useCursorAndBackground } from '@/hooks/useCursorAndBackground';
 import useScrollSmooth from '@/hooks/useScrollSmooth';
 import { useGSAP } from '@gsap/react';
 
-
 // Components
 import MobileApplicationTestimonial from '@/components/testimonial/MobileApplicationTestimonial';
-import MobileApplicationBenefit from '@/components/benefits/MobileApplicationBenefit';
 import MobileApplicationFeature from '@/components/features/MobileApplicationFeature';
 import MobileApplicationPrice from '@/components/price-area/MobileApplicationPrice';
 import MobileApplicationHero from '@/components/hero-banner/MobileApplicationHero';
@@ -22,13 +20,8 @@ import DesignStudioAbout from '@/components/about/DesignStudioAbout';
 import ITSolutionStep from '@/components/step/ITSolutio0nStep2';
 
 const MobileApplicationMain = () => {
-    // Initialize custom cursor and background styles
     useCursorAndBackground({ bgColor: "#08041D" });
-
-    // Enable smooth scroll animations
     useScrollSmooth();
-
-    // Initialize effects and animations
     useParallax();
 
     useGSAP(() => {
@@ -48,24 +41,47 @@ const MobileApplicationMain = () => {
                 <div id="ball"></div>
             </div>
 
-            {/* Global Components */}
             <BackToTop />
             <MobileApplicationHeader />
 
             <div id="smooth-wrapper" style={{ backgroundColor: "#F7F7FD" }}>
                 <div id="smooth-content">
-                    {/* Main Content Sections */}
                     <main>
-                        <MobileApplicationHero />
-                        <MobileApplicationBrand />
-                        <DesignStudioAbout/>
-                        <MobileApplicationFeature />
-                        <ITSolutionStep/>
-                        <PortfolioSlider/>
-                        {/* <MobileApplicationBenefit /> */}
-                        <MobileApplicationPrice />
-                        <MobileApplicationTestimonial />
-                        <MobileApplicationFaq />
+                        <section id="hero">
+                            <MobileApplicationHero />
+                        </section>
+
+                        <section id="brand">
+                            <MobileApplicationBrand />
+                        </section>
+
+                        <section id="about">
+                            <DesignStudioAbout />
+                        </section>
+
+                        <section id="features">
+                            <MobileApplicationFeature />
+                        </section>
+
+                        <section id="steps">
+                            <ITSolutionStep />
+                        </section>
+
+                        <section id="template">
+                            <PortfolioSlider />
+                        </section>
+
+                        {/* <section id="price">
+                            <MobileApplicationPrice />
+                        </section> */}
+
+                        {/* <section id="testimonial">
+                            <MobileApplicationTestimonial />
+                        </section> */}
+
+                        <section id="faq">
+                            <MobileApplicationFaq />
+                        </section>
                     </main>
                     <MobileApplicationFooter />
                 </div>

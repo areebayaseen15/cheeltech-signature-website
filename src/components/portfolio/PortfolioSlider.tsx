@@ -6,14 +6,11 @@ import Link from 'next/link';
 const PortfolioSlider = () => {
     // Display portfolio items from index 47 to 53 (7 items)
     const displayPortfolioItems = portfolioData.slice(47, 54);
-
     return (
-       <div id="smooth-wrapper">
-                   <div id="smooth-content">
-                       {/* Main Content Sections */}
-                       <main>
-                         <div className="container container-1230">
-                <div className="row">
+      
+        <div className="app-feature-area app-feature-border-style  pb-100">
+            <div className="container container-1230">
+                     <div className="row">
                     <div className="col-lg-12">
                         <div className="app-feature-heading text-center pt-40 mb-55">
                             <span className="tp-section-subtitle border-bg bg-color tp_fade_anim" data-delay=".3">
@@ -28,8 +25,10 @@ const PortfolioSlider = () => {
                         </div>
                     </div>
                 </div>
-                </div>
-                           <div className="tp-slider-elegant-area pt-20 pb-80">
+                     
+            </div>
+
+                   <div className="tp-slider-elegant-area pt-20 pb-80">
                             
                                <div className="tp-slider-elegant-wrapper">
                                    <div className="tp-slider-elegant-inner-wrap">
@@ -53,10 +52,10 @@ const PortfolioSlider = () => {
                                    </div>
                                </div>
                            </div>
-                       </main>
-                   </div>
-               </div>
+
+          
+        </div>
     );
-};
+}
 
 export default PortfolioSlider;

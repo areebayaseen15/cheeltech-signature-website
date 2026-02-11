@@ -15,27 +15,23 @@ const ITSolutionStep = () => {
         {
             id: 'collapseOne',
             step: 'Step 1',
-            title: 'Discovery',
-            content: 'Leveraging our findings, we craft a comprehensive IT plan. This involves designing systems, networks, and software that align with your business goals.'
+            title: 'Pick Your Template',
+            content: ' Browse our library of 2026-standard, responsive designs built to render perfectly across all platforms.'
         },
         {
             id: 'collapseTwo',
             step: 'Step 2',
-            title: 'Planning & Design',
-            content: 'Leveraging our findings, we craft a comprehensive IT plan. This involves designing systems, networks, and software that align with your business goals.'
+            title: 'Customize Your Identity',
+            content: 'Add your professional information and watch our engine generate a sharp, interactive signature in real-time.'
         },
         {
             id: 'collapseThree',
             step: 'Step 3',
-            title: 'Implementation',
-            content: 'Leveraging our findings, we craft a comprehensive IT plan. This involves designing systems, networks, and software that align with your business goals.'
+            title: 'Install with Ease',
+            content: 'Follow our simple, platform-specific guides to add your new high-performance signature to your email client.'
         },
-        {
-            id: 'collapseFour',
-            step: 'Step 4',
-            title: 'Quality Assurance',
-            content: 'Leveraging our findings, we craft a comprehensive IT plan. This involves designing systems, networks, and software that align with your business goals.'
-        }
+        
+       
     ];
 
     const handleAccordionClick = (id: AccordionId) => {
@@ -44,22 +40,15 @@ const ITSolutionStep = () => {
 
     return (
         <div className="it-step-area it-step-bg paste-bg-2 bg-none p-relative pt-100 pb-100">
-            {/* <div className="it-step-shape-1">
-                <Image data-speed="1.1" src={aboutShape} alt="about-shape" />
-            </div> */}
-            {/* <div className="it-step-shape-2 d-none d-xxl-block">
-                <Image data-speed="1.1" src={aboutShapeTwo} alt="about-shape" />
-            </div> */}
             <div className="container container-1230">
                 <div className="row justify-content-center">
                     <div className="col-xl-10">
                         <div className="it-step-title-box z-index-1 text-center mb-105">
                             <span className="tp-section-subtitle-platform mb-20 tp-split-text tp-split-right text-black">How we works</span>
-                            <h4 className="tp-section-title-platform mb-20 tp-split-text tp-split-right text-black">Transforming IT, One Step at a Time</h4>
+                            <h4 className="tp-section-title-platform mb-20 tp-split-text tp-split-right text-black">Three Steps to a Professional Brand</h4>
                             <div className="tp_text_anim ">
-                                <p className='text-light'>
-                                    Every business is unique, and so are our solutions. {`Here's`}
-                                    how we tailor <br /> our expertise to your needs
+                                <p className='text-light w-80'>
+                                  Our streamlined process removes the technical complexity of email branding. By combining expert engineering with intuitive design, we provide a seamless path to professional, high-performance HTML signatures that stay sharp on every device, ensuring your digital handshake makes a perfect impression.
                                 </p>
                             </div>
                         </div>
