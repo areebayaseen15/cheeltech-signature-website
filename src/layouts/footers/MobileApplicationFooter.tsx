@@ -47,7 +47,7 @@ const MobileApplicationFooter = () => {
 
                                 <div className="app-footer-widget-info">
                                     <div className="app-footer-widget-info-title">Need live support?</div>
-                                    <Link className="tp-line-black" href="mailto:qV2Ct@example.com">awais@signsolution.xyz</Link>
+                                    <Link className="tp-line-black" href="mailto:awais@signsolution.xyz">awais@signsolution.xyz</Link>
                                 </div>
                             </div>
                         </div>

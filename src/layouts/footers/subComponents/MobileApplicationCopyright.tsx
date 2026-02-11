@@ -9,7 +9,7 @@ const MobileApplicationCopyright = () => {
                 <div className="row align-items-center">
                     <div className="col-12">
                         <div className="app-copyright-text text-center z-index-1">
-                            <p>© {getCurrentYear()} Copyrights by Agntix Co. All Rights Reserved. Developed by <Link href="#">Aqlova</Link></p>
+                            <p>© {getCurrentYear()} Copyrights by SignSolution. All Rights Reserved. Developed by <Link href="https://www.cheeltech.com">Cheeltech</Link></p>
                         </div>
                     </div>
                 </div>
