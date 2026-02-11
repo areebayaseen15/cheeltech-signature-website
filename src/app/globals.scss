@@ -93,3 +93,30 @@ background: linear-gradient(230deg, #FF994B 6.7%, #D34BE9 48.83%, #3188FF 90.96%
     text-align: center;
     margin: auto;
 }
+/* Logo styling */
+.logo {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; /* modern light font */
+  font-weight: 300; /* light font */
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+}
+
+/* "Sign" styling with pinkish color and curved underline */
+.sign {
+  position: relative;
+  color: #ff4d6d; /* pinkish */
+  font-weight: 900;
+}
+
+.sign::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* space below text */
+  width: 100%;
+  height: 4px; /* thickness of underline */
+  background: #ff4d6d; /* lighter pink for underline */
+  border-radius: 50%; /* makes it curved/rounded */
+}

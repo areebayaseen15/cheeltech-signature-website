@@ -1,7 +1,9 @@
-import brand1 from '../../../public/assets/img/home-10/brand/app-brand-1.png';
-import brand2 from '../../../public/assets/img/home-10/brand/app-brand-2.png';
-import brand3 from '../../../public/assets/img/home-10/brand/app-brand-3.png';
-import brand4 from '../../../public/assets/img/home-10/brand/app-brand-4.png';
+import brand1 from '../../../public/assets/img/web-logo/1.jpeg';
+import brand2 from '../../../public/assets/img/web-logo/2.jpeg';
+import brand3 from '../../../public/assets/img/web-logo/3.jpeg';
+import brand4 from '../../../public/assets/img/web-logo/4.jpeg';
+import brand5 from '../../../public/assets/img/web-logo/5.jpeg';
+import brand6 from '../../../public/assets/img/web-logo/6.jpeg';
 import Image from 'next/image';
 import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,10 +16,15 @@ const MobileApplicationBrand = () => {
         { id: 2, logo: brand2, alt: 'Brand 2' },
         { id: 3, logo: brand3, alt: 'Brand 3' },
         { id: 4, logo: brand4, alt: 'Brand 4' },
-        { id: 5, logo: brand1, alt: 'Brand 1' },
-        { id: 6, logo: brand2, alt: 'Brand 2' },
-        { id: 7, logo: brand3, alt: 'Brand 3' },
-        { id: 8, logo: brand4, alt: 'Brand 4' }
+        { id: 5, logo: brand5, alt: 'Brand 5' },
+        { id: 6, logo: brand6, alt: 'Brand 6' },
+        { id: 7, logo: brand1, alt: 'Brand 1' },
+        { id: 8, logo: brand2, alt: 'Brand 2' },
+         { id: 9, logo: brand3, alt: 'Brand 3' },
+        { id: 10, logo: brand4, alt: 'Brand 4' },
+         { id: 11, logo: brand5, alt: 'Brand 5' },
+         { id: 12, logo: brand6, alt: 'Brand 6' },
+  
     ];
 
     return (

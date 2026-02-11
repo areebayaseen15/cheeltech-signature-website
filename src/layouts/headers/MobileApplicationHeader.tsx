@@ -1,4 +1,5 @@
 import logoBlack from '../../../public/assets/img/logo/logo-black.png';
+// import logoBlack from '../../../public/assets/img/web-logo/sssss8.png';
 import OffCanvasPanel from '@/components/offcanvas/OffCanvasPanel';
 import useStickyHeader from '@/hooks/useStickyHeader';
 import HeaderTop from './subComponents/HeaderTop';
@@ -29,6 +30,13 @@ const MobileApplicationHeader = () => {
                                             <Link href="/">
                                                 <Image width={150} src={logoBlack} alt="logo-light" />
                                             </Link>
+ {/* <Link href="/">
+  <h1 className="logo">
+    <span className="sign">Sign</span>Solution
+  </h1>
+</Link> */}
+
+
                                         </div>
                                     </div>
                                     <div className="col-xl-10 col-lg-8 col-md-6 col-7 pl-50">

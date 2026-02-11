@@ -26,7 +26,7 @@ const MobileApplicationFooter = () => {
                         </div>
                         <div className="col-xl-2 col-lg-2  col-md-3 mb-40">
                             <div className="dgm-footer-widget app-footer-widget app-footer-col-2">
-                                <h4 className="dgm-footer-widget-title">About product</h4>
+                                <h4 className="dgm-footer-widget-title">Links</h4>
                                 <div className="dgm-footer-widget-menu">
                                     <ul>
                                         <li><Link href="#about">About</Link></li>
