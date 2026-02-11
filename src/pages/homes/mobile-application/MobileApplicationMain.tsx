@@ -1,5 +1,5 @@
 "use client"
-import { fadeAnimation, gsapBackgroundAnim, panelPinAnimation } from '@/hooks/useGsapAnimation';
+import { fadeAnimation,scrollMovingText, gsapBackgroundAnim, panelPinAnimation,textInvertAnim3 } from '@/hooks/useGsapAnimation';
 import { useParallax } from '@/components/shared/Parallax/useParallax';
 import { useCursorAndBackground } from '@/hooks/useCursorAndBackground';
 import useScrollSmooth from '@/hooks/useScrollSmooth';
@@ -35,7 +35,9 @@ const MobileApplicationMain = () => {
         const timer = setTimeout(() => {
             fadeAnimation();
             panelPinAnimation();
-            gsapBackgroundAnim()
+            scrollMovingText();
+            gsapBackgroundAnim();
+            textInvertAnim3();
         }, 100);
         return () => clearTimeout(timer);
     });
@@ -60,7 +62,7 @@ const MobileApplicationMain = () => {
                         <MobileApplicationFeature />
                         <ITSolutionStep/>
                         <PortfolioSlider/>
-                        <MobileApplicationBenefit />
+                        {/* <MobileApplicationBenefit /> */}
                         <MobileApplicationPrice />
                         <MobileApplicationTestimonial />
                         <MobileApplicationFaq />
