@@ -21,7 +21,7 @@ const headerMenuData:MenuItem[] = [
     children: true,
     title: "About",
     pluseIncon: true,
-    link: "#",
+    link: "#about",
    
   },
   {

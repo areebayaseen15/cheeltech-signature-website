@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const DesignStudioAbout = () => {
     return (
-        <div className="des-about-area pb-200">
+        <div id='about' className="des-about-area pb-200">
             <div className="container container-1230">
                 <div className="row justify-content-center">
                     <div className="col-xl-12">
