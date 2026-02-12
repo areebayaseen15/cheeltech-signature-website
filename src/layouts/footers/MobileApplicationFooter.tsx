@@ -1,5 +1,5 @@
 import MobileApplicationCopyright from './subComponents/MobileApplicationCopyright';
-import logoBlack from '../../../public/assets/img/logo/logo-black.png';
+import logoBlack from '../../../public/assets/img/web-logo/sssss8.png';
 import { SendEmailIcon } from '@/svg';
 import Image from 'next/image';
 import Link from 'next/link';
