@@ -2,6 +2,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 import gsap from 'gsap';
 
+
 // Type for SplitText result
 interface SplitTextResult {
   chars: HTMLElement[];
@@ -9,11 +10,29 @@ interface SplitTextResult {
   lines?: HTMLElement[];
   split(params?: { type?: string }): void;
 }
+// 🔥 GLOBAL SCROLLER PROXY FIX
+if (typeof window !== "undefined") {
+
+  const scroller = document.querySelector("#smooth-wrapper");
+
+  if (scroller) {
+    ScrollTrigger.defaults({
+      scroller: scroller as Element
+    });
+  }
+
+}
+
 
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, SplitText);
 }
+// 🔥 GLOBAL SCROLLER (for smooth scroll wrapper)
+const getScroller = () => {
+  if (typeof window === "undefined") return undefined;
+  return document.querySelector("#smooth-wrapper") || window;
+};
 //fade animation
 export const fadeAnimation = () => {
   gsap.utils.toArray<HTMLElement>(".tp_fade_anim").forEach((item) => {
@@ -33,12 +52,13 @@ export const fadeAnimation = () => {
       y: (tp_fade_direction === "top" ? -tp_fade_offset : (tp_fade_direction === "bottom" ? tp_fade_offset : 0)),
     };
 
-    if (tp_onscroll_value) {
-      tp_anim_setting.scrollTrigger = {
-        trigger: item,
-        start: 'top 85%',
-      };
-    }
+   if (tp_onscroll_value) {
+  tp_anim_setting.scrollTrigger = {
+    trigger: item,
+    start: 'top 85%',
+    scroller: getScroller(), // ✅ FIX
+  };
+}
 
     gsap.from(item, tp_anim_setting);
   });
@@ -63,11 +83,13 @@ export const revalEffectAnimation = () => {
       opacity: 0,
     };
     if (onScroll == 1) {
-      animConfig.scrollTrigger = {
-        trigger: areveal,
-        start: 'top 85%',
-      };
-    }
+  animConfig.scrollTrigger = {
+    trigger: areveal,
+    start: 'top 85%',
+    scroller: getScroller(), // keep
+  };
+}
+
     gsap.from(split.chars, animConfig);
   });
 }
@@ -82,13 +104,15 @@ export const charAnimation = () => {
     animationItems.forEach((splitTextLine) => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: splitTextLine,
-          start: 'top 90%',
-          end: 'bottom 60%',
-          scrub: false,
-          markers: false,
-          toggleActions: 'play none none none'
-        }
+  trigger: splitTextLine,
+  start: 'top 90%',
+  end: 'bottom 60%',
+  scrub: false,
+  markers: false,
+  toggleActions: 'play none none none',
+  scroller: getScroller(), // ✅
+}
+
       });
 
       // Type assertion for SplitText result
@@ -208,7 +232,6 @@ export const panelAnimation = (): void => {
 // Scroll-triggered background animation for text lines
 export const textInvertAnim = (className: string) => {
 
-  // ✅ SSR safety
   if (typeof window === "undefined") return;
 
   const elements = document.querySelectorAll(`.${className}`);
@@ -217,19 +240,23 @@ export const textInvertAnim = (className: string) => {
   const split = new SplitText(elements, { type: "lines" });
 
   split.lines.forEach((target) => {
-    gsap.to(target, {
-      backgroundPositionX: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: target,
-        scrub: 1,
-        start: "top 85%",
-        end: "bottom center",
-      },
-    });
+    gsap.fromTo(
+      target,
+      { backgroundPositionX: "100%" },
+      {
+        backgroundPositionX: "0%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: target,
+          scrub: 1,
+          start: "top 85%",
+          end: "bottom center",
+          scroller: getScroller(), // ✅ FIX
+        },
+      }
+    );
   });
 
-  // ✅ MOST IMPORTANT — ID jump fix
   setTimeout(() => {
     ScrollTrigger.refresh();
   }, 500);
@@ -1059,10 +1086,11 @@ export const scrollMovingText = () => {
     gsap.fromTo(w, { x }, {
       x: xEnd,
       scrollTrigger: {
-        trigger: section,
-        scrub: 0.1,
-        invalidateOnRefresh: true,
-      }
+  trigger: section,
+  scrub: 0.1,
+  invalidateOnRefresh: true,
+  scroller: getScroller(), // ✅
+}
     });
   });
 }

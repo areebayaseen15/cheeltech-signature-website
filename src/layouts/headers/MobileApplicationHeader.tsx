@@ -1,5 +1,5 @@
-import logoBlack from '../../../public/assets/img/logo/logo-black.png';
-// import logoBlack from '../../../public/assets/img/web-logo/sssss8.png';
+// import logoBlack from '../../../public/assets/img/logo/logo-black.png';
+import logoBlack from '../../../public/assets/img/web-logo/sssss8.png';
 import OffCanvasPanel from '@/components/offcanvas/OffCanvasPanel';
 import useStickyHeader from '@/hooks/useStickyHeader';
 import HeaderTop from './subComponents/HeaderTop';

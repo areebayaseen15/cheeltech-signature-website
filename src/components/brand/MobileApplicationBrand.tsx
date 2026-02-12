@@ -1,11 +1,11 @@
-import brand1 from '../../../public/assets/img/web-logo/1.jpeg';
-import brand2 from '../../../public/assets/img/web-logo/2.jpeg';
-import brand3 from '../../../public/assets/img/web-logo/3.jpeg';
-import brand4 from '../../../public/assets/img/web-logo/4.jpeg';
-import brand5 from '../../../public/assets/img/web-logo/5.jpeg';
-import brand6 from '../../../public/assets/img/web-logo/6.jpeg';
+import brand1 from '../../../public/assets/img/web-logo/bnc-new.png';
+import brand2 from '../../../public/assets/img/web-logo/vme-new.png';
+import brand3 from '../../../public/assets/img/web-logo/br-new.png';
+import brand4 from '../../../public/assets/img/web-logo/laila-hussain.png';
+import brand5 from '../../../public/assets/img/web-logo/markable-new.png';
+import brand6 from '../../../public/assets/img/web-logo/prepanation-new.png';
 import Image from 'next/image';
-import React from 'react';
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 

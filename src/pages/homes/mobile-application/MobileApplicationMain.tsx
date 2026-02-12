@@ -3,11 +3,14 @@ import { useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
-import { fadeAnimation, scrollMovingText, gsapBackgroundAnim, panelPinAnimation, textInvertAnim3 } from '@/hooks/useGsapAnimation';
-
-import { useParallax } from '@/components/shared/Parallax/useParallax';
-import { useCursorAndBackground } from '@/hooks/useCursorAndBackground';
-import useScrollSmooth from '@/hooks/useScrollSmooth';
+import {
+  fadeAnimation,
+  scrollMovingText,
+  gsapBackgroundAnim,
+  panelPinAnimation,
+  textInvertAnim3,
+  splitTextAnimation,
+} from '@/hooks/useGsapAnimation';
 
 // Components
 import MobileApplicationHero from '@/components/hero-banner/MobileApplicationHero';
@@ -25,129 +28,110 @@ gsap.registerPlugin(ScrollTrigger);
 
 const MobileApplicationMain = () => {
 
-  // Global effects
-  useCursorAndBackground({ bgColor: "#08041D" });
-  useScrollSmooth();
-  useParallax();
-
-  // -----------------------------------
-  // INITIAL LOAD ANIMATIONS
-  // -----------------------------------
-  useEffect(() => {
-
-    const initAnimations = () => {
-
-      fadeAnimation();
-      panelPinAnimation();
-      scrollMovingText();
-      gsapBackgroundAnim();
-      textInvertAnim3();
-
-      ScrollTrigger.refresh();
-    };
-
-    // Delay for smooth scroll wrapper
-    setTimeout(initAnimations, 500);
-
-  }, []);
-
-  // -----------------------------------
-  // 🔥 HASH / ID NAVIGATION FIX
-  // -----------------------------------
-// 🔥 HASH + DIRECT ID LOAD + NAV CLICK FIX
-useEffect(() => {
-
-  const reInitAnimations = () => {
-
-    // Kill old triggers
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-
-    // Re-run all animations
+  // -----------------------------
+  // 🔹 Function to init all animations
+  // -----------------------------
+  const initAnimations = () => {
     fadeAnimation();
     panelPinAnimation();
+      splitTextAnimation();
     scrollMovingText();
     gsapBackgroundAnim();
     textInvertAnim3();
-
-    // Force refresh positions
-    ScrollTrigger.refresh(true);
+    ScrollTrigger.refresh();
   };
 
-  // 1️⃣ Navbar hash click
-  const handleHashChange = () => {
-    setTimeout(reInitAnimations, 800);
-  };
+  // -----------------------------
+  // 🔹 Initial load + smooth scroll + scroll-trigger setup
+  // -----------------------------
+  useEffect(() => {
+    const smoothWrapper = document.querySelector('#smooth-wrapper') as HTMLElement | null;
+    if (!smoothWrapper) return;
 
-  window.addEventListener("hashchange", handleHashChange);
+    // -----------------------------
+    // 🔹 ScrollTrigger proxy for smooth scroll
+    // -----------------------------
+    ScrollTrigger.scrollerProxy(smoothWrapper, {
+      scrollTop(value?: number) {
+        if (value !== undefined) smoothWrapper.scrollTop = value;
+        return smoothWrapper.scrollTop;
+      },
+      getBoundingClientRect() {
+        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+      },
+    });
 
-  // 2️⃣ Direct page load with ID
-  if (window.location.hash) {
-    setTimeout(reInitAnimations, 800);
-  }
+    // -----------------------------
+    // 🔹 Initial animations on load
+    // -----------------------------
+    setTimeout(initAnimations, 500);
 
-  return () => {
-    window.removeEventListener("hashchange", handleHashChange);
-  };
+    // -----------------------------
+    // 🔹 Scroll-triggered animations
+    // -----------------------------
+    const handleScroll = () => {
+      scrollMovingText();
+      gsapBackgroundAnim();
+      ScrollTrigger.update();
+    };
 
-}, []);
-useEffect(() => {
-  // Delay 1 frame for React render + smooth scroll
-  const el = document.querySelector(".tp_text_invert_3");
-  if (el) {
-    // Force SplitText animation to run after element is in DOM
-    setTimeout(() => {
-      textInvertAnim3();
-      ScrollTrigger.refresh();
-    }, 200);
-  }
-}, []);
+    smoothWrapper.addEventListener('scroll', handleScroll);
+
+    return () => {
+      smoothWrapper.removeEventListener('scroll', handleScroll);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+
+  }, []);
+
+  // -----------------------------
+  // 🔹 Hash / ID navigation fix
+  // -----------------------------
+  useEffect(() => {
+    const reInitAnimations = () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      initAnimations();
+    };
+
+    const handleHashChange = () => setTimeout(reInitAnimations, 800);
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    if (window.location.hash) {
+      setTimeout(reInitAnimations, 800);
+    }
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+
+  }, []);
 
   return (
     <>
-      <div id="magic-cursor">
-        <div id="ball"></div>
-      </div>
-
+      <div id="magic-cursor"><div id="ball"></div></div>
       <BackToTop />
       <MobileApplicationHeader />
 
-      <div id="smooth-wrapper" style={{ backgroundColor: "#F7F7FD" }}>
+      <div
+        id="smooth-wrapper"
+        style={{
+          backgroundColor: '#F7F7FD',
+          overflowY: 'auto',
+          height: '100vh',
+          scrollBehavior: 'smooth', // optional, makes scroll jumps smooth
+        }}
+      >
         <div id="smooth-content">
-
           <main>
-
-            <section id="hero">
-              <MobileApplicationHero />
-            </section>
-
-            <section id="brand" className="pt-50">
-              <MobileApplicationBrand />
-            </section>
-
-            <section id="about" className="pt-0">
-              <DesignStudioAbout />
-            </section>
-
-            <section id="features" className="pt-80">
-              <MobileApplicationFeature />
-            </section>
-
-            <section id="steps" className="pt-160">
-              <ITSolutionStep />
-            </section>
-
-            <section id="template" className="pt-100">
-              <PortfolioSlider />
-            </section>
-
-            <section id="faq" className="pt-140">
-              <MobileApplicationFaq />
-            </section>
-
+            <section id="hero"><MobileApplicationHero /></section>
+            <section id="brand" className="pt-50"><MobileApplicationBrand /></section>
+            <section id="about" className="pt-0"><DesignStudioAbout /></section>
+            <section id="features" className="pt-80"><MobileApplicationFeature /></section>
+            <section id="steps" className="pt-160"><ITSolutionStep /></section>
+            <section id="template" className="pt-100"><PortfolioSlider /></section>
+            <section id="faq" className="pt-140"><MobileApplicationFaq /></section>
           </main>
 
           <MobileApplicationFooter />
-
         </div>
       </div>
     </>
