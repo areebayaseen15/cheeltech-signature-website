@@ -43,7 +43,7 @@ const HeaderTop = () => {
                 <p>
                   <span>2026 STANDARDS</span>Pro-Grade HTML Signatures. No Blurry Images. Free Template Library.
                 </p>
-                <Link className="d-none d-sm-block" href="#">
+                <Link className="d-none d-sm-block" href="#template">
                  Browse Templates{' '}
                   <span>
                     <ArrowSvg strokeWidth={2} />
